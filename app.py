@@ -16,3 +16,14 @@ if hist_button:
         car_data, x="price", nbins=50, title="Histogram of Car Prices"
     )
     st.plotly_chart(fig_hist, use_container_width=True)
+
+# Create a button to show the scatter plot
+scatter_button = st.button("Mirar Gráfico de Dispersión de Precio vs Odómetro")
+if scatter_button:
+    st.write("Creando Gráfico de Dispersión de Precio vs Odómetro...")
+    fig_scatter = px.scatter(
+        car_data, x="odometer", y="price", title="Price vs Odometer"
+    )
+    st.plotly_chart(fig_scatter, use_container_width=True)
+
+st.write("Aplicación creada por Emiliano Espejel")
